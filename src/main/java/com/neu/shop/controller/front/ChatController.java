@@ -14,9 +14,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-/**
- * Created by 文辉 on 2017/7/26.
- */
+
 @Controller
 public class ChatController {
 
@@ -93,7 +91,7 @@ public class ChatController {
         List<Chat> chatList2 = chatService.selectChatByExample(chatExample2);
 
         //获取userid列表
-        List<Integer> useridList = new ArrayList<>();
+        List<Integer> useridList = new ArrayList();
         for (Chat chat : chatList1) {
             useridList.add(chat.getSenduser());
         }
@@ -170,7 +168,7 @@ public class ChatController {
         List<Chat> chatList2 = chatService.selectChatByExample(chatExample2);
 
         //获取userid列表
-        List<Integer> useridList = new ArrayList<>();
+        List<Integer> useridList = new ArrayList();
         for (Chat chat : chatList1) {
             useridList.add(chat.getSenduser());
         }

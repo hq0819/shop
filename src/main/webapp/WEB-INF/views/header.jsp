@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: 文辉
-  Date: 2017/7/18
-  Time: 15:37
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/font-awesome.min.css">
@@ -79,7 +73,7 @@
                             <li><a href="${pageContext.request.contextPath}/info/address">地址管理</a></li>
                             <li><a href="${pageContext.request.contextPath}/order">交易中</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="${pageContext.request.contextPath}/chatrobot">小淘</a></li>
+                            <li><a href="${pageContext.request.contextPath}/chatrobot">小易</a></li>
                         </ul></li>
                 </ul>
 

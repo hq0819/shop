@@ -20,9 +20,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-/**
- * Created by 蒋松冬 on 2017/7/22.
- */
+
 @Controller
 public class CustomerController {
 
@@ -41,7 +39,7 @@ public class CustomerController {
 
     @RequestMapping("/registerresult")
     public String registerResult(User user,Model registerResult){
-        List<User> userList=new ArrayList<>();
+        List<User> userList=new ArrayList();
         UserExample userExample=new UserExample();
         userExample.or().andUsernameLike(user.getUsername());
         userList=userService.selectByExample(userExample);
@@ -106,7 +104,7 @@ public class CustomerController {
         HttpSession session=request.getSession();
         UserExample userExample=new UserExample();
         User user,updateUser=new User();
-        List<User> userList=new ArrayList<>();
+        List<User> userList=new ArrayList();
         Integer userid;
         user=(User)session.getAttribute("user");
         userid= user.getUserid();
@@ -192,7 +190,7 @@ public class CustomerController {
         orderModel.addAttribute("orderList",orderList);
         Order order;
         OrderItem orderItem;
-        List<OrderItem> orderItemList=new ArrayList<>();
+        List<OrderItem> orderItemList=new ArrayList();
         Goods goods;
         Address address;
        for (Integer i=0;i<orderList.size();i++)
@@ -201,8 +199,8 @@ public class CustomerController {
            OrderItemExample orderItemExample=new OrderItemExample();
            orderItemExample.or().andOrderidEqualTo(order.getOrderid());
            orderItemList=orderService.getOrderItemByExample(orderItemExample);
-           List<Goods> goodsList=new ArrayList<>();
-           List<Integer> goodsIdList=new ArrayList<>();
+           List<Goods> goodsList=new ArrayList();
+           List<Integer> goodsIdList=new ArrayList();
            for (Integer j=0;j<orderItemList.size();j++)
            {
                orderItem=orderItemList.get(j);
@@ -322,7 +320,7 @@ public class CustomerController {
         }
 
         GoodsExample goodsExample = new GoodsExample();
-        List<Goods> goodsList = new ArrayList<>();
+        List<Goods> goodsList = new ArrayList();
         if (!goodsIdList.isEmpty()) {
             goodsExample.or().andGoodsidIn(goodsIdList);
             goodsList = goodsService.selectByExample(goodsExample);

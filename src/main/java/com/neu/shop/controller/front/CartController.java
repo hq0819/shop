@@ -14,9 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.*;
 
-/**
- * Created by 文辉 on 2017/7/24.
- */
+
 @Controller
 public class CartController {
 
@@ -75,7 +73,7 @@ public class CartController {
         List<ShopCart> shopCart = shopCartService.selectByExample(shopCartExample);
 
         //获取购物车中的商品信息
-        List<Goods> goodsAndImage = new ArrayList<>();
+        List<Goods> goodsAndImage = new ArrayList();
         for (ShopCart cart:shopCart) {
             Goods goods = goodsService.selectById(cart.getGoodsid());
 

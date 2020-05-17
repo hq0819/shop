@@ -16,9 +16,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-/**
- * Created by 文辉 on 2017/7/25.
- */
+
 @Controller
 public class OrderController {
 
@@ -60,7 +58,7 @@ public class OrderController {
         List<ShopCart> shopCart = shopCartService.selectByExample(shopCartExample);
 
         //获取购物车中的商品信息
-        List<Goods> goodsAndImage = new ArrayList<>();
+        List<Goods> goodsAndImage = new ArrayList();
 
         Float totalPrice = new Float(0);
         Integer oldTotalPrice = 0;

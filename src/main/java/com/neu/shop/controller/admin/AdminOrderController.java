@@ -15,9 +15,7 @@ import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by 文辉 on 2017/7/26.
- */
+
 @Controller
 @RequestMapping("/admin/order")
 public class AdminOrderController {
@@ -52,9 +50,9 @@ public class AdminOrderController {
             OrderItemExample orderItemExample = new OrderItemExample();
             orderItemExample.or().andOrderidEqualTo(order.getOrderid());
             List<OrderItem> orderItemList = orderService.getOrderItemByExample(orderItemExample);
-            List<Integer> goodsIdList = new ArrayList<>();
+            List<Integer> goodsIdList = new ArrayList();
 
-            List<Goods> goodsList = new ArrayList<>();
+            List<Goods> goodsList = new ArrayList();
             for (OrderItem orderItem : orderItemList) {
 //                goodsIdList.add(orderItem.getGoodsid());
                 Goods goods = goodsService.selectById(orderItem.getGoodsid());
@@ -117,12 +115,12 @@ public class AdminOrderController {
             OrderItemExample orderItemExample = new OrderItemExample();
             orderItemExample.or().andOrderidEqualTo(order.getOrderid());
             List<OrderItem> orderItemList = orderService.getOrderItemByExample(orderItemExample);
-            List<Integer> goodsIdList = new ArrayList<>();
+            List<Integer> goodsIdList = new ArrayList();
             /*for (OrderItem orderItem : orderItemList) {
                 goodsIdList.add(orderItem.getGoodsid());
             }
 */
-            List<Goods> goodsList = new ArrayList<>();
+            List<Goods> goodsList = new ArrayList();
             for (OrderItem orderItem : orderItemList) {
 //                goodsIdList.add(orderItem.getGoodsid());
                 Goods goods = goodsService.selectById(orderItem.getGoodsid());
@@ -171,12 +169,12 @@ public class AdminOrderController {
             OrderItemExample orderItemExample = new OrderItemExample();
             orderItemExample.or().andOrderidEqualTo(order.getOrderid());
             List<OrderItem> orderItemList = orderService.getOrderItemByExample(orderItemExample);
-            List<Integer> goodsIdList = new ArrayList<>();
+            List<Integer> goodsIdList = new ArrayList();
             /*for (OrderItem orderItem : orderItemList) {
                 goodsIdList.add(orderItem.getGoodsid());
             }*/
 
-            List<Goods> goodsList = new ArrayList<>();
+            List<Goods> goodsList = new ArrayList();
             for (OrderItem orderItem : orderItemList) {
 //                goodsIdList.add(orderItem.getGoodsid());
                 Goods goods = goodsService.selectById(orderItem.getGoodsid());

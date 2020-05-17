@@ -17,9 +17,7 @@ import javax.servlet.http.HttpSession;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-/**
- * Created by 文辉 on 2017/7/24.
- */
+
 @Controller
 public class FrontGoodsController {
 
@@ -190,7 +188,7 @@ public class FrontGoodsController {
         List<Category> categoryList = cateService.selectByExample(categoryExample);
 
         //获取查出的类别id
-        List<Integer> cateId = new ArrayList<>();
+        List<Integer> cateId = new ArrayList();
         for (Category category : categoryList) {
             cateId.add(category.getCateid());
         }

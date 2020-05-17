@@ -22,9 +22,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.*;
 
-/**
- * Created by 文辉 on 2017/7/19.
- */
+
 
 @Controller
 @RequestMapping("/admin/goods")
@@ -125,13 +123,18 @@ public class GoodsController {
         for(MultipartFile multipartFile:fileToUpload){
             if (multipartFile != null){
 
-                String realPath = request.getSession().getServletContext().getRealPath("/");
+                String realPath = request.getSession().getServletContext().getRealPath("/shopimage");
+                System.out.println(realPath);
 //                    String realPath = request.getContextPath();
 //                System.out.println(realPath);
                 //图片路径=项目在本地磁盘的路径\shop\target\shop\shopimage
-                String imageName = UUID.randomUUID().toString().replace("-", "") + multipartFile.getOriginalFilename();
-                String imagePath = realPath.substring(0,realPath.indexOf("shop")) + "shopimage" + File.separatorChar + imageName;
+                String imageName = UUID.randomUUID().toString().replace("-", "") + ".png";
+
+                System.out.println(imageName);
+
+                String imagePath = "E:\\shopimage\\" +imageName;
 //                String imagePath = realPath + "shopimage\\" + imageName;
+                System.out.println(imagePath);
 
                 //负载均衡时使用的图片路径
 //                String imagePath = "D:\\Code\\Apache-Tomcat-v8.0\\webapps\\shopimage\\" + imageName;
@@ -170,7 +173,7 @@ public class GoodsController {
 
     @RequestMapping("/addCategoryResult")
     public String addCategoryResult(Category category,Model addCategoryResult,RedirectAttributes redirectAttributes){
-        List<Category> categoryList=new ArrayList<>();
+        List<Category> categoryList=new ArrayList();
         CategoryExample categoryExample=new CategoryExample();
         categoryExample.or().andCatenameEqualTo(category.getCatename());
         categoryList=cateService.selectByExample(categoryExample);

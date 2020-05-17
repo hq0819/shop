@@ -14,9 +14,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by 文辉 on 2017/7/18.
- */
+
 @Controller
 public class MainController {
 
@@ -76,7 +74,7 @@ public class MainController {
 
         List<Goods> goodsList = goodsService.selectByExampleLimit(digGoodsExample);
 
-        List<Goods> goodsAndImage = new ArrayList<>();
+        List<Goods> goodsAndImage = new ArrayList();
         //获取每个商品的图片
         for (Goods goods:goodsList) {
             //判断是否为登录状态

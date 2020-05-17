@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: 蒋松冬
-  Date: 2017/7/24
-  Time: 19:09
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
 <!--
@@ -194,7 +188,7 @@ limitations under the License
         <header class="demo-drawer-header">
            <%-- <img src="images/user.jpg" class="demo-avatar">--%>
             <div class="demo-avatar-dropdown">
-                <h1>淘一淘</h1>
+                <h1>易购商城</h1>
                <%-- <span>hello@example.com</span>--%>
                 <div class="mdl-layout-spacer">
                 </div>
